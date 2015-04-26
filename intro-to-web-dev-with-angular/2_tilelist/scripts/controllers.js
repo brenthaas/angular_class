@@ -1,6 +1,6 @@
 angular.module('tilelist')
-.controller('tilesController', function(){
-  var tiles = [
+.controller('tilesController', function($scope){
+  $scope.animalTiles = [
     {
       title: 'Monkey',
       imgSrc: 'http://www.cuteducky.com/img/monkey_x.jpg',

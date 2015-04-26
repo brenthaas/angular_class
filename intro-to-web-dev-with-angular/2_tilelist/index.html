@@ -8,16 +8,27 @@
 </head>
 <body>
 	<div class="panel" ng-controller="tilesController">
+		<div class="counter">
+			<button ng-click="count = count + 1" ng-init="count=0">
+			  Increment
+			</button>
+			<span>
+			  count: {{count}}
+			</span>
+		</div>
 		<ul class="media-list">
-			<li class="well tile">
-		    <div class="media-left">
-		        <img class="media-object" src="http://www.cuteducky.com/img/monkey_x.jpg">
-		    </div>
-		    <div class="media-body">
-		      <h4 class="media-heading">Monkey</h4>
-		      <h6>Life Expectancy: 15</h6>
-		      <a href="http://en.wikipedia.org/wiki/Monkey">Wiki</a>
-		    </div>
+			<li class="well tile" ng-repeat="animal in animalTiles">
+      	Hide {{animal.title}}: <input type="checkbox" ng-model="animal.hide">
+      	<div ng-hide="animal.hide">
+			    <div class="media-left">
+			        <img class="media-object" ng-src={{animal.imgSrc}}>
+			    </div>
+			    <div class="media-body" >
+			      <h4 class="media-heading">{{animal.title}}</h4>
+			      <h6>Life Expectancy: {{animal.lifeExpectancy}}</h6>
+			      <a ng-href={{animal.wikiUrl}}>Wiki</a>
+			    </div>
+			  </div>
 		  </li>
 		</ul>
 	</div>
