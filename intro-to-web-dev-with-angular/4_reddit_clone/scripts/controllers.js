@@ -6,7 +6,5 @@
 angular.module('feed-reader')
 .controller('feedController', function($scope, redditService, $stateParams){
   $scope.feed_name = $stateParams.subreddit;
-  redditService.getFeed($scope.feed_name).then(function(data){
-    $scope.posts = data;
-  });
+  redditService.getFeed($scope.feed_name, $scope);
 });

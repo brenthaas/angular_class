@@ -8,12 +8,12 @@ angular.module('feed-reader')
 .factory('redditService', function($http){
 
   var service = {
-    getFeed: function(subreddit) {
+    getFeed: function(subreddit, scope) {
       var redditUrl = 'http://www.reddit.com'
       var subredditUrl = redditUrl + '/r/' + subreddit + '.json';
-      return $http.get(subredditUrl).then(function(response){
+      return $http.get(subredditUrl).success(function(response, status){
           var results = [];
-          var posts = response.data.data.children
+          var posts = response.data.children
 
           for(var i = 0; i < posts.length; i++) {
             item = posts[i].data;
@@ -25,6 +25,7 @@ angular.module('feed-reader')
               comments_url: redditUrl + item.permalink
             });
           }
+          scope.posts = results;
           return results;
         }
       );
