@@ -1,12 +1,11 @@
 angular.module('feed-reader', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/feed/nba');
 
   $stateProvider
     .state('feed',{
-      url: '/',
+      url: '/feed/:subreddit',
       templateUrl: 'feedView.html',
       controller: 'feedController'
     })
-
 })

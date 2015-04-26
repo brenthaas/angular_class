@@ -1,8 +1,8 @@
-<h1></h1>
+<h1>Feed for {{feed_name}}</h1>
 <ul class="list-group story-list">
-  <li class="list-group-item">
-    <span class="badge">21</span>
-    <a ng-href="http://www.reddit.com/r/nba/comments/2zezcp/tim_duncan_with_his_14513th_rebound_passes_kevin/" target="_blank">Tim Duncan</a>
-    <a ng-href="http://www.reddit.com/r/nba/comments/2zezcp/tim_duncan_with_his_14513th_rebound_passes_kevin/" target="_blank" class="right">Comment</a>
+  <li class="list-group-item" ng-repeat="post in posts">
+    <span class="badge">{{post.score}}</span>
+    <a ng-href="{{post.url}}" target="_blank">{{post.title}}</a>
+    <a ng-href="{{post.comments_url}}" target="_blank" class="right">{{post.num_comments}} Comments</a>
   </li>
 </ul>
