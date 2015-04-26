@@ -8,11 +8,15 @@
 </head>
 <body>
 	<div class="panel" ng-controller="tilesController">
-		<div class="orderby-le">
-			Order by Life Expectancy: <input type="checkbox" ng-model="order_by_field" ng-true-value="'-lifeExpectancy'">
+		<div class="filtering">
+			Filter by title: <input ng-model="titleInput">
+			<button ng-click="filterTitle.title = titleInput">Filter</button>
+			<span class="orderby-le">
+				Order by Life Expectancy: <input type="checkbox" ng-model="order_by_field" ng-true-value="'-lifeExpectancy'">
+			</span>
 		</div>
 		<ul class="media-list">
-			<li class="well tile" ng-repeat="animal in animalTiles | orderBy: order_by_field">
+			<li class="well tile" ng-repeat="animal in animalTiles | orderBy: order_by_field | filter: filterTitle : strict">
       	Hide {{animal.title}}: <input type="checkbox" ng-model="animal.hide">
       	<div ng-hide="animal.hide">
 			    <div class="media-left">
