@@ -1,0 +1,29 @@
+body {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.right {
+  position: absolute;
+  right: 60px;
+}
+
+.sort {
+  float: right;
+}
+
+.story-list {
+  padding-top: 10px;
+  clear: both;
+}
+
+.tool-tip {
+  position: absolute;
+  background: #add8e6;
+  z-index: 1000;
+  width: 100px;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 5px;
+  border-radius: 5px;
+}

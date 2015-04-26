@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="tilelist">
+<head>
+	<title>List of Tiles</title>
+	<meta charset="utf-8">
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="panel" ng-controller="tilesController">
+		<ul class="media-list">
+			<li class="well tile">
+		    <div class="media-left">
+		        <img class="media-object" src="http://www.cuteducky.com/img/monkey_x.jpg">
+		    </div>
+		    <div class="media-body">
+		      <h4 class="media-heading">Monkey</h4>
+		      <h6>Life Expectancy: 15</h6>
+		      <a href="http://en.wikipedia.org/wiki/Monkey">Wiki</a>
+		    </div>
+		  </li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="scripts/angular.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/controllers.js"></script>
+</body>
+</html>

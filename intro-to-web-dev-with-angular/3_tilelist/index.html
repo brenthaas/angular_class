@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="tilelist">
+<head>
+	<title>List of Tiles</title>
+	<meta charset="utf-8">
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h1>Animal Tiles</h1>
+	<div ng-controller="tilesController">
+		<ul class="media-list">
+			<li class="well tile" ng-repeat="tile in tiles">
+		    <div class="media-left">
+		        <img class="media-object" ng-src="{{tile.imgSrc}}">
+		    </div>
+		    <div class="media-body">
+		      <h4 class="media-heading">{{tile.title}}</h4>
+		      <h6>Life Expectancy: {{tile.lifeExpectancy}}</h6>
+		      <a ng-href="{{tile.wikiUrl}}">Wiki</a>
+		    </div>
+		  </li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="scripts/angular.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/controllers.js"></script>
+</body>
+</html>

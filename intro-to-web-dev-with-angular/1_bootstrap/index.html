@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='tilebook'>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1 ng-controller="brettController">
+			My name is: {{ name }}
+	</h1>
+	<div ng-controller='martinController'>
+		<input ng-model='firstName' type='text'/>
+		<p>First name: {{ firstName }}</p>
+		<p>Full name: {{ fullName() }}</p>
+	</div>
+
+<script type="text/javascript" src='scripts/angular.js'></script>
+
+<script type="text/javascript">
+	angular.module('tilebook', [])
+	.controller('martinController', function($scope){
+			$scope.firstName = 'Martin';
+			$scope.lastName = 'Henry';
+
+			$scope.fullName = function() { return $scope.firstName + ' ' + $scope.lastName;
+			}
+	})
+	.controller('brettController', function($scope){
+			$scope.name = 'Brett';
+	})
+
+
+</script>
+</body>
+</html>
